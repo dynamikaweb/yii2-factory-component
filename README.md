@@ -27,7 +27,19 @@ to the `require` section of your `composer.json` file.
 How to use
 ----------
 
-### PHP 7.4 or Higher ###
+### Calling dynamically configured components ###
+
+#### Wrong! ####
+```PHP
+Yii::$app->components['mailer'];
+```
+
+#### Correct! ####
+```PHP
+Yii::$app->get('mailer');
+```
+
+### Setup in PHP 7.4 or Higher ###
 `common/configs/main.php`
 ```PHP
 <?php
@@ -55,7 +67,7 @@ return [
 ```
 
 
-### Older PHP version ###
+### Setup in older´s PHP version ###
 `common/configs/main.php`
 ```PHP
 <?php
